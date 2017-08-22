@@ -1,0 +1,42 @@
+﻿@model ExpenseManager.Core.Models.Income
+
+@{
+    ViewBag.Title = "Details | Income";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>The Income details you asked for is displayed below.</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IncomeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncomeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IncomeAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncomeAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IncomeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

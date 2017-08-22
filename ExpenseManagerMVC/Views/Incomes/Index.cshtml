@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ExpenseManager.Core.Models.Income>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Income</h2>
+<h3>Add or edit income here...</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IncomeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IncomeAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IncomeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IncomeAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IncomeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IncomeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IncomeID })
+        </td>
+    </tr>
+}
+
+</table>

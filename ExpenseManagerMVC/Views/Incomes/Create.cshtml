@@ -1,35 +1,33 @@
-﻿@model ExpenseManager.Core.Models.Expense
+﻿@model ExpenseManager.Core.Models.Income
 
 @{
-    ViewBag.Title = "Edit | Expense";
+    ViewBag.Title = "Create | Income";
 }
 
-<h2>Edit</h2>
-<h3>Please fill the form to edit the existing values</h3>
+<h2>Create</h2>
+<h3>Fill the form below to add new income.</h3>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Expense</h4>
+        <h4>Income</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ExpenseID)
-
         <div class="form-group">
-            @Html.LabelFor(model => model.ExpenseName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IncomeName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ExpenseName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ExpenseName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.IncomeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IncomeName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ExpenseAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IncomeAmount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ExpenseAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ExpenseAmount, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.IncomeAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IncomeAmount, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -43,7 +41,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

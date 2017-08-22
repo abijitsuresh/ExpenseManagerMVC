@@ -1,0 +1,42 @@
+﻿@model ExpenseManager.Core.Models.Expense
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expense</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpenseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpenseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpenseAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpenseAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExpenseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
